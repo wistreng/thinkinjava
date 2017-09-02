@@ -41,10 +41,10 @@ public class MyArrayList /*implements*/ {
         elementData[size++] = obj;
     }
 
-    /*实现数组的扩容 右移运算符 等价于原容量乘以2*/
+    /*实现数组的扩容 右移运算符 等价于原容量乘以1.5*/
     public void ensureCapacity (int size) {
         if(size == elementData.length) {
-            elementData = Arrays.copyOf(elementData, size << 1);
+            elementData = Arrays.copyOf(elementData, size + (size >> 1));
         }
     }
 
