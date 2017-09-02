@@ -40,4 +40,30 @@ public class Chapter1 {
             System.out.println("---"+list.get(i));
         }
     }
+
+    @Test
+    public void testLinkedList() {
+        LinkedList<String> list = new LinkedList<String>();
+        if(list.add("aaa")){
+
+            System.out.println(list.size());
+        }
+    }
+
+    @Test
+    public void testMyLinkedList() {
+        MyLinkedList<String> list = new MyLinkedList<String>();
+        list.add("aaa");
+        list.add("aaa");
+        list.add("aaa");
+        list.add("aaa");
+        list.add("aaa");
+        System.out.println(list.size());
+
+        list.add(3,"bbb");
+        list.add(3,"bbb");
+        list.add(3,"bbb");
+        System.out.println(list.size());
+        list.print();
+    }
 }
