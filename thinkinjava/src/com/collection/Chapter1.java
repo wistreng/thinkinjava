@@ -37,7 +37,7 @@ public class Chapter1 {
 
     public void print(MyArrayList list) {
         for (int i = 0; i < list.size(); i++) {
-            System.out.println("---"+list.get(i));
+            System.out.println(i+"---"+list.get(i));
         }
     }
 
@@ -59,10 +59,17 @@ public class Chapter1 {
         list.add("aaa");
         list.add("aaa");
         System.out.println(list.size());
+        list.print();
 
         list.add(3,"bbb");
         list.add(3,"bbb");
         list.add(3,"bbb");
+        System.out.println(list.size());
+        list.print();
+
+        list.remove(4);
+        list.remove(4);
+        list.remove(4);
         System.out.println(list.size());
         list.print();
     }

@@ -87,6 +87,36 @@ public class MyLinkedList<E> {
             linkBefore(e, node(index));
     }
 
+    public void remove(int index) {
+        checkElementIndex(index);
+        unlink(node(index));
+
+    }
+
+    /**
+     * unlink non-null node x
+     * @param x
+     */
+    public void unlink(Node<E> x) {
+        final Node<E> next = x.next;
+        final Node<E> prev = x.prev;
+//        final E element = x.item;
+        if(next == null){
+            last = prev;
+        } else {
+            next.prev = prev;
+            x.next = null;
+        }
+        if(prev == null){
+            first = next;
+        } else {
+            prev.next = next;
+            x.prev = null;
+        }
+        x.item = null;
+        size--;
+    }
+
     /**
      * Returns the (non-null) Node at the specified element index.
      * @param index
@@ -127,7 +157,9 @@ public class MyLinkedList<E> {
         for(int i=0; i<size; i++){
             if(i==0)
                 System.out.print(node(i).item);
-            System.out.print("<-->"+node(i).item);
+            else
+                System.out.print("<-->"+node(i).item);
         }
+        System.out.println();
     }
 }
